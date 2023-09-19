@@ -10,6 +10,13 @@ type Action = {
     payload: string;
 }
 
+const initialText = {
+    firstName: "",
+    lastName: "",
+    address: "",
+    email: ""
+}
+
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case "firstName":
@@ -25,7 +32,7 @@ const reducer = (state: State, action: Action) => {
     }
 }
 const UseReducerType = () => {
-    const [state, dispatch] = useReducer(reducer, { firstName: "", lastName: "", address: "", email: "" })
+    const [state, dispatch] = useReducer(reducer, initialText)
 
     const handleFromSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
